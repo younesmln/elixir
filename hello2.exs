@@ -19,5 +19,12 @@ defmodule Util do
     def reduce([head|tail], val, func), do: reduce(tail, func.(head, val), func)
 
     def max([]), do: nil
-    def max([head|tail]), do: reduce([head|tail], head, fn (new, before) -> if new > before, do: new, else: before end)		
+    def max([head|tail]), do: reduce([head|tail], head, fn (new, before) -> if new > before, do: new, else: before end)	
+
+    def filter([], _val), do: []
+    def filter([head = [_,val] |tail], val), do: [head | filter(tail, val)]
+    def filter([_|tail], val), do: filter(tail, val)
+
+    def span(to, to), do: [to]
+    def span(from, to) when from < to, do: [from| span(from+1, to)]
 end
