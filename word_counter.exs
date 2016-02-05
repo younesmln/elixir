@@ -18,7 +18,8 @@ defmodule Cmd do
 	end
 
 	defp word_list_stream(file_stream) do
-		map_func = fn (x) -> String.split(x, ~r{[^A-Za-z0-9_]}) end
+		#map_func = fn (x) -> String.split(x, ~r{[^A-Za-z0-9_]}) end
+		map_func = fn (x) -> String.split(x, ~r{\s}) end
 		filter_func = fn (x) -> String.length(x) > 0 end
 		file_stream |>
 		Stream.flat_map(map_func) |>
