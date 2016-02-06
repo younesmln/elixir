@@ -1,0 +1,6 @@
+/_build
+/cover
+/deps
+/geo_db
+erl_crash.dump
+*.ez

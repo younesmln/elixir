@@ -1,3 +1,9 @@
 hello3.exs
 test.txt
 word_frequecy.txt
+geolocation/_build
+geolocation/cover
+geolocation/deps
+geolocation/geo_db
+geolocation/erl_crash.dump
+geolocation/*.ez
